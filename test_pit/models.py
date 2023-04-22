@@ -21,7 +21,8 @@ class Project(models.Model):
     # 状态
     status = models.BooleanField(default=True, verbose_name='状态')
     # 创建人
-    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, verbose_name='创建人')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, verbose_name='创建人',
+                                   db_column='created_by')
     # 创建时间
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     # 最后更新时间
